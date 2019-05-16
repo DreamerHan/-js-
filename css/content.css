@@ -1,116 +1,54 @@
-#content{
-    width:100%;
+#content {
+    width: 100%;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
-#content-box{ /*只负责滑动*/
-    width:100%;
+
+#content-box {
+    /*只负责滑动*/
+    width: 100%;
     transition: .5s;
-    position:absolute; left:0; top:0;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
-#content-box .box-list{
-    width:2000px; 
-    position:relative; top:0; left:50%;
-    margin-left:-1000px; 
+
+#content-box .box-list {
+    width: 2000px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-left: -1000px;
 }
-#home{
+
+#home {
     background: url(../img/bg1.jpg) no-repeat;
 }
-#course{
+
+#course {
     background: url(../img/bg3.jpg) no-repeat;
 }
-#works{
+
+#works {
     background: url(../img/bg4.jpg) no-repeat;
 }
-#about{
+
+#about {
     background: url(../img/bg5.jpg) no-repeat;
 }
-#team{
+
+#team {
     background: url(../img/bg2.jpg) no-repeat;
 }
-#content-box .box-list:before{
-    content : "";
-    display:table;
+
+#content-box .box-list:before {
+    content: "";
+    display: table;
 }
-#content-box .box-list .list-content{
-    width:1100px; height:520px;
-    margin:0 auto;
-}
-#works-content{
+
+#content-box .box-list .list-content {
+    width: 1100px;
+    height: 520px;
+    margin: 0 auto;
     position: relative;
-}
-#works-content .works-title-box{
-    padding:50px 0 80px 50px;
-}
-#works-content .works-imgs{
-    padding-left:50px;
-}
-#works-content .works-imgs .imgs-box{
-    width:220px; height:133px;
-    float:left; overflow:hidden;
-    margin:0 1px;
-    position: relative;
-} 
-#works-content .works-imgs .imgs-box:last-of-type{
-    width:332px;
-}
-#works-content .works-imgs .imgs-box img{
-    transition: .5s;
-}
-#works-content .works-imgs .img-mark {
-    width:100%; height:100%;
-    position:absolute;
-    left:0; top:0;
-    background:rgba(25, 25, 25, .8);
-    color:#fff;
-    padding:5px 10px;
-    box-sizing: border-box;
-    opacity: 0;
-    transition: .5s opacity;
-}
-
-#works-content .imgs-box:hover .img-mark{
-    opacity: 1;
-}
-
-#works-content .imgs-box:hover img{
-    transform: scale(1.2) rotate(26deg);
-}
-
-#works-content .works-imgs .img-info{
-    display: inline-block;
-    max-height:40px;
-    overflow:hidden;
-}
-
-#works-content .works-imgs .show-icon{
-    width:32px; height:34px;
-    position:absolute; left:50%; top:50%;
-    margin-left:-16px; margin-top:-8px;
-    background:url(../img/zoomico.png) no-repeat;
-    cursor:pointer;
-    transition: .5s;
-}
-
-#works-content .works-imgs .show-icon:hover{
-    background-position: 0 -36px;
-}
-#works-content .works-robot{
-    width:167px; height:191px;
-    background:url(../img/robot.png) no-repeat;
-    position:absolute; left:900px; top:145px;
-    animation: 6s linear infinite robotMove;
-    -wekit-animation: 6s linear infinite robotMove;
-}
-@keyframes robotMove{
-    0%{}
-    49%{ transform: rotateY(0deg); }
-    50%{left:450px; transform: rotateY(180deg); }
-    100%{ transform: rotateY(180deg); }
-}
-@-webkit-keyframes robotMove{
-    0%{}
-    49%{ -webkit-transform: rotateY(0deg); }
-    50%{left:450px; -webkit-transform: rotateY(180deg); }
-    100%{ -webkit-transform: rotateY(180deg); }
 }

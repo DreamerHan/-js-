@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/header.css" rel="stylesheet" type="text/css" />
     <link href="css/content.css" rel="stylesheet" type="text/css">
+    <link href="css/content-work.css" rel="stylesheet" type="text/css">
+    <link href="css/content-home.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <div id="main">
         <div id="header">
@@ -58,7 +62,25 @@
         <div id="content">
             <div id="content-box">
                 <div id="home" class="box-list">
-                    <div class="list-content"></div>
+                    <div class="list-content">
+                        <ul class="layers">
+                            <li class="active leftShow">
+                                <h2 class="common-title">One Layer</h2>
+                            </li>
+                            <li class="rightHide">
+                                <h2 class="common-title">Two Layer</h2>
+                            </li>
+                            <li>
+                                <h2 class="common-title">Three Layer</h2>
+                            </li>
+                        </ul>
+                        <ol class="layers-nav">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
+                    </div>
                 </div>
                 <div id="course" class="box-list">
                     <div class="list-content"></div>
@@ -100,4 +122,5 @@
 <script src="./js/getElements.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/worksImgs.js"></script>
+
 </html>

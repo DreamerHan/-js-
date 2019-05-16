@@ -1,0 +1,196 @@
+#home .layers {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 800px;
+}
+
+#home .layers li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* display: block; 在animation中是不支持动态显示隐藏的，所以需要用visibility */
+    visibility: hidden;
+}
+
+#home .layers li.active {
+    z-index: 2;
+    visibility: visible;
+}
+
+#home .layers li:nth-of-type(1) {
+    background: #dc6c5f;
+}
+
+#home .layers li:nth-of-type(2) {
+    background: #95dc84;
+}
+
+#home .layers li:nth-of-type(3) {
+    background: #64b9d2;
+}
+
+#home .layers h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 200px;
+}
+
+
+/* 左边隐藏对应右边显示 */
+
+#home .layers .leftHide {
+    animation: homeLeftHide 1.5s;
+    -webkit-animation: homeLeftHide 1.5s;
+    visibility: hidden;
+}
+
+#home .layers .rightShow {
+    animation: homeRightShow 1.5s;
+    -webkit-animation: homeRightShow 1.5s;
+    visibility: visible;
+}
+
+@keyframes homeLeftHide {
+    0% {
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+    40% {
+        transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+    }
+    100% {
+        transform: translateZ(-200px)
+    }
+}
+
+@keyframes homeRightShow {
+    0% {
+        transform: translateZ(-200px);
+    }
+    40% {
+        transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+    }
+    100% {
+        transform: translateZ(0px)
+    }
+}
+
+@-webkit-keyframes homeLeftHide {
+    0% {
+        -webkit-transform: translateZ(0px);
+        visibility: visible;
+    }
+    40% {
+        -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+    }
+    100% {
+        -webkit-transform: translateZ(-200px)
+    }
+}
+
+@-webkit-keyframes homeRightShow {
+    0% {
+        -webkit-transform: translateZ(-200px);
+    }
+    40% {
+        -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+    }
+    100% {
+        -webkit-transform: translateZ(0px)
+    }
+}
+
+
+/* 左边显示对应右边隐藏 */
+
+#home .layers .leftShow {
+    animation: homeLeftShow 1.5s;
+    -webkit-animation: homeLeftShow 1.5s;
+    visibility: visible;
+}
+
+#home .layers .rightHide {
+    animation: homeRightHide 1.5s;
+    -webkit-animation: homeRightHide 1.5s;
+    visibility: hidden;
+}
+
+@keyframes homeLeftShow {
+    0% {
+        transform: translateZ(-200px);
+    }
+    40% {
+        transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+    }
+    100% {
+        transform: translateZ(0px)
+    }
+}
+
+@keyframes homeRightHide {
+    0% {
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+    40% {
+        transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+    }
+    100% {
+        transform: translateZ(-200px)
+    }
+}
+
+@-webkit-keyframes homeLeftShow {
+    0% {
+        -webkit-transform: translateZ(-200px);
+    }
+    40% {
+        -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+    }
+    100% {
+        -webkit-transform: translateZ(0px)
+    }
+}
+
+@-webkit-keyframes homeRightHide {
+    0% {
+        -webkit-transform: translateZ(0px);
+        visibility: visible;
+    }
+    40% {
+        -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+    }
+    100% {
+        -webkit-transform: translateZ(-200px)
+    }
+}
+
+#home .layers-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    z-index: 5;
+    text-align: center;
+}
+
+#home .layers-nav li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 2px;
+    box-shadow: 0 0 6px rgba(25, 25, 25, .8);
+}
+
+#home .layers-nav li.active {
+    background: #fff;
+    cursor: default;
+}
