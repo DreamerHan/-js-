@@ -11,6 +11,8 @@
 #home .layers li {
     width: 100%;
     height: 100%;
+    z-index: 2;
+    background: lightseagreen;
     position: absolute;
     left: 0;
     top: 0;
@@ -19,7 +21,6 @@
 }
 
 #home .layers li.active {
-    z-index: 2;
     visibility: visible;
 }
 
@@ -45,14 +46,14 @@
 /* 左边隐藏对应右边显示 */
 
 #home .layers .leftHide {
-    animation: homeLeftHide 1.5s;
-    -webkit-animation: homeLeftHide 1.5s;
+    animation: homeLeftHide 1.2s;
+    -webkit-animation: homeLeftHide 1.2s;
     visibility: hidden;
 }
 
 #home .layers .rightShow {
-    animation: homeRightShow 1.5s;
-    -webkit-animation: homeRightShow 1.5s;
+    animation: homeRightShow 1.2s;
+    -webkit-animation: homeRightShow 1.2s;
     visibility: visible;
 }
 
@@ -110,23 +111,23 @@
 /* 左边显示对应右边隐藏 */
 
 #home .layers .leftShow {
-    animation: homeLeftShow 1.5s;
-    -webkit-animation: homeLeftShow 1.5s;
+    animation: homeLeftShow 1.2s;
+    -webkit-animation: homeLeftShow 1.2s;
     visibility: visible;
 }
 
 #home .layers .rightHide {
-    animation: homeRightHide 1.5s;
-    -webkit-animation: homeRightHide 1.5s;
+    animation: homeRightHide 1.2s;
+    -webkit-animation: homeRightHide 1.2s;
     visibility: hidden;
 }
 
 @keyframes homeLeftShow {
     0% {
-        transform: translateZ(-200px);
+        transform: translateZ(-220px);
     }
     40% {
-        transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+        transform: translate(-48%, 0) scale(0.8) rotateY(-16deg);
     }
     100% {
         transform: translateZ(0px)
@@ -139,19 +140,19 @@
         visibility: visible;
     }
     40% {
-        transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+        transform: translate(48%, 0) scale(0.8) rotateY(16deg);
     }
     100% {
-        transform: translateZ(-200px)
+        transform: translateZ(-220px)
     }
 }
 
 @-webkit-keyframes homeLeftShow {
     0% {
-        -webkit-transform: translateZ(-200px);
+        -webkit-transform: translateZ(-220px);
     }
     40% {
-        -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
+        -webkit-transform: translate(-48%, 0) scale(0.8) rotateY(-16deg);
     }
     100% {
         -webkit-transform: translateZ(0px)
@@ -164,10 +165,10 @@
         visibility: visible;
     }
     40% {
-        -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
+        -webkit-transform: translate(48%, 0) scale(0.8) rotateY(16deg);
     }
     100% {
-        -webkit-transform: translateZ(-200px)
+        -webkit-transform: translateZ(-220px)
     }
 }
 
