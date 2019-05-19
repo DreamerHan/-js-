@@ -1,24 +1,62 @@
-html,body{ overflow:hidden; height:100%;}
-body,h1,h2,h3,h4,p,ul,ol{ padding:0; margin:0; font:14px "微软雅黑";}
-li{ list-style:none;}
-img{ border:none;}
-a{ text-decoration:none;}
-a:active{ color:#009ee0;}
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    font: 14px "微软雅黑";
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: #009ee0;
+}
+
 
 /* 清浮动 */
-.clear{
-    zoom:1;
+
+.clear {
+    zoom: 1;
 }
-.clear:after{
-    content : "";
-    display:block;
+
+.clear:after {
+    content: "";
+    display: block;
     clear: both;
 }
 
-.common-title{
-    color:#009ee0;
-    font-size:80px;
-    line-height:0.8;
-    font-weight:bold;
+.common-title {
+    color: #009ee0;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
     letter-spacing: -5px;
+}
+
+.common-intro {
+    color: #fff;
+    line-height: 1.5;
+    font-size: 15px;
 }

@@ -1,0 +1,70 @@
+#about .about-line {
+    width: 357px;
+    height: 998px;
+    background: url(../img/greenLine.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+#about .about-title-box {
+    padding: 50px 0 100px 50px;
+}
+
+#about .about-intro-box {
+    width: 400px;
+    padding-left: 50px;
+}
+
+#about .spider-man-imgs .img-box {
+    position: absolute;
+    width: 260px;
+    height: 200px;
+    border: 5px solid rgba(255, 255, 255, .5);
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#about .spider-man-imgs .img-box:nth-of-type(1) {
+    left: 750px;
+    top: 26px;
+}
+
+#about .spider-man-imgs .img-box:nth-of-type(2) {
+    left: 600px;
+    top: 300px;
+}
+
+#about .spider-man-imgs .img-box .show-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 260px;
+    height: 200px;
+    transition: .8s;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+}
+
+#about .spider-man-imgs .img-box ul {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+#about .spider-man-imgs li {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#about .spider-man-imgs li img {
+    /* 分割图片的img发生运动 */
+    position: absolute;
+    transition: .8s;
+}

@@ -4,6 +4,27 @@
     overflow: hidden;
 }
 
+#content-nav {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 0;
+}
+
+#content-nav li {
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+#content-nav li.active {
+    background: #fff;
+    cursor: default;
+}
+
 #content-box {
     /*只负责滑动*/
     width: 100%;
