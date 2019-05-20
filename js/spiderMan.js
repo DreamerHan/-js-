@@ -1,24 +1,22 @@
 let oAbout = getById('about')
 let spiderManImgs = oAbout.querySelector('.spider-man-imgs')
 
-changeImg()
+createSpiderImg()
 
-function changeImg() { //分割被隐藏的图片
+function createSpiderImg() {
+    let dividedUl = spiderManImgs.querySelectorAll('ul')
+    let hiddenSpider = spiderManImgs.querySelectorAll('.hidden-spider')
 
-    let aUl = spiderManImgs.querySelectorAll('ul')
-    let imgSpan = spiderManImgs.querySelectorAll('span')
-
-    for (let i = 0; i < aUl.length; i++) {
-        aUl[i].index = i
-        divideImg(aUl[i], imgSpan[aUl[i].index])
+    for (let i = 0; i < dividedUl.length; i++) {
+        dividedUl[i].index = i
+        divideImg(dividedUl[i], hiddenSpider[dividedUl[i].index]) //分割图片
     }
-
 }
 
-function divideImg(oUl, imgSpan) {
-    let w = oUl.offsetWidth / 2;
-    let h = oUl.offsetHeight / 2;
-    let src = oUl.dataset.src; //h5中统一设置data-src这种形式的自定义属性时的获取方法
+function divideImg(targetUl, hiddenSpider) {
+    let w = targetUl.offsetWidth / 2;
+    let h = targetUl.offsetHeight / 2;
+    let src = targetUl.dataset.src; //h5中统一设置data-src这种形式的自定义属性时的获取方法
 
     for (let i = 0; i < 4; i++) {
         let oLi = document.createElement('li')
@@ -29,37 +27,40 @@ function divideImg(oUl, imgSpan) {
         oImg.src = src
 
         oImg.style.left = -i % 2 * w + 'px'
-        oImg.style.top = -Math.floor(i / 2) * h + 'px'
-            //存储每一块的初始位置
+        oImg.style.top = -Math.floor(i / 2) * h + 'px';
+        //存储每一块的初始位置
         oImg.oldleft = -i % 2 * w
         oImg.oldtop = -Math.floor(i / 2) * h
 
         oLi.appendChild(oImg)
-        oUl.appendChild(oLi)
+        targetUl.appendChild(oLi)
     }
 
+    moveImg(targetUl, hiddenSpider, w, h) //分割的图片移动效果
 
-    let data = [
+}
+
+function moveImg(targetUl, hiddenSpider, w, h) {
+    let moveData = [
         { name: 'top', value: h },
         { name: 'left', value: -w * 2 },
         { name: 'left', value: w },
         { name: 'top', value: -h * 2 }
     ]
 
-    let aImg = oUl.getElementsByTagName('img')
+    let aImg = targetUl.getElementsByTagName('img')
 
-    oUl.onmouseover = function() {
-        setStyle(imgSpan, 'transform', 'scale(1)')
+    targetUl.onmouseover = function() {
+        setStyle(hiddenSpider, 'transform', 'scale(1)')
         for (let i = 0; i < aImg.length; i++) {
-            aImg[i].style[data[i].name] = data[i].value + 'px'
+            aImg[i].style[moveData[i].name] = moveData[i].value + 'px'
         }
     }
 
-    oUl.onmouseout = function() {
-        setStyle(imgSpan, 'transform', 'scale(1.3)')
+    targetUl.onmouseout = function() {
+        setStyle(hiddenSpider, 'transform', 'scale(1.3)')
         for (let i = 0; i < aImg.length; i++) {
-            aImg[i].style[data[i].name] = aImg[i][`old${data[i].name}`] + 'px'
+            aImg[i].style[moveData[i].name] = aImg[i][`old${moveData[i].name}`] + 'px'
         }
     }
-
 }
