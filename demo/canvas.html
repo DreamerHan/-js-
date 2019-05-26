@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }
+        
+        #c1 {
+            width: 1200px;
+            height: 700px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -600px;
+            margin-top: -350px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c1"></canvas>
+</body>
+<script>
+    let oC = document.getElementById('c1')
+    let oGC = oC.getContext('2d')
+
+    let setArr = []
+
+    setInterval(function() {
+        oGC.clearRect(0, 0, oC.offsetWidth, oC.offsetHeight)
+
+        for (let i = 0; i < setArr.length; i++) {
+            setArr[i].r += 0.4
+            setArr[i].c4 -= 0.01
+            if (setArr[i].c4 <= 0) {
+                setArr.splice(i, 1)
+            }
+        }
+
+        for (let i = 0; i < setArr.length; i++) {
+            oGC.fillStyle = `rgba(${setArr[i].c1}, ${setArr[i].c2}, ${setArr[i].c3}, ${setArr[i].c4})`
+            oGC.beginPath()
+            oGC.moveTo(setArr[i].x, setArr[i].y)
+            oGC.arc(setArr[i].x, setArr[i].y, setArr[i].r, 0, 2 * Math.PI)
+            oGC.closePath()
+            oGC.fill()
+        }
+    }, 1000 / 60)
+
+    setInterval(function() {
+        let x = Math.random() * oC.width
+        let y = Math.random() * oC.height
+        let r = 2
+        let c1 = Math.round(Math.random() * 255)
+        let c2 = Math.round(Math.random() * 255)
+        let c3 = Math.round(Math.random() * 255)
+        let c4 = 1
+
+        setArr.push({
+            x,
+            y,
+            r,
+            c1,
+            c2,
+            c3,
+            c4
+        })
+
+    }, 100)
+</script>
+
+</html>

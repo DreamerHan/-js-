@@ -1,0 +1,36 @@
+#team .team-title-box {
+    padding: 30px 0 50px 50px;
+    width: 400px;
+    float: left;
+}
+
+#team .team-intro-box {
+    float: right;
+    width: 400px;
+    padding-top: 30px;
+}
+
+#team .team-img {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    margin-left: -472px;
+}
+
+#team .team-img ul {}
+
+#team .team-img li {
+    width: 118px;
+    height: 448px;
+    background: url(../img/team.png) no-repeat;
+    float: left;
+    cursor: pointer;
+}
+
+#team #canvasBubble {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    z-index: 2;
+    cursor: pointer;
+}

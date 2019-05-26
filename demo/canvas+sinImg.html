@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }
+        
+        #c1 {
+            background: #fff;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="c1" width="300" height="400"></canvas>
+
+</body>
+<script>
+    let oC = document.getElementById('c1')
+    let oGC = oC.getContext('2d')
+
+    let setArr = []
+
+    setInterval(function() {
+        oGC.clearRect(0, 0, oC.width, oC.height)
+
+        for (let i = 0; i < setArr.length; i++) {
+
+            setArr[i].num++;
+            //左右的移动距离是来回循环的，就是 0 - 1的基本范围
+            setArr[i].x = setArr[i].startX + Math.sin(setArr[i].num * Math.PI / 180) * setArr[i].stepX
+
+            //上下移动距离是不断增加的弧度
+            setArr[i].y = setArr[i].startY - (setArr[i].num * Math.PI / 180) * setArr[i].stepY
+
+            if (setArr[i].y < 10) {
+                setArr.splice(i, 1)
+            }
+        }
+
+        for (let i = 0; i < setArr.length; i++) {
+            oGC.fillStyle = `rgba(${setArr[i].c1}, ${setArr[i].c2}, ${setArr[i].c3}, ${setArr[i].c4})`
+            oGC.beginPath()
+            oGC.moveTo(setArr[i].x, setArr[i].y)
+            oGC.arc(setArr[i].x, setArr[i].y, setArr[i].r, 0, 2 * Math.PI)
+            oGC.closePath()
+            oGC.fill()
+        }
+    }, 1000 / 60)
+
+
+    setInterval(function() {
+        let x = Math.random() * oC.width // 0-1的变化值
+        let y = oC.height - 10 //sin原x轴的弧度移动距离
+        let r = Math.random() * 8 + 2
+        let c1 = Math.round(Math.random() * 255)
+        let c2 = Math.round(Math.random() * 255)
+        let c3 = Math.round(Math.random() * 255)
+        let c4 = 1
+        let num = 0
+        let startX = x
+        let startY = y
+        let stepX = Math.random() * 20 + 10
+        let stepY = Math.random() * 80 + 10
+
+        setArr.push({
+            x,
+            y,
+            r,
+            c1,
+            c2,
+            c3,
+            c4,
+            num,
+            startX,
+            startY,
+            stepX,
+            stepY
+        })
+
+
+    }, 20)
+</script>
+
+</html>

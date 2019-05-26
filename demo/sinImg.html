@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100%;
+        }
+        
+        .dot {
+            border: 1px solid #000;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let startX = 200
+        let startY = 300
+
+        let step = 100
+        let n = 0
+
+        setInterval(function() {
+
+            n++
+
+            let oDot = document.createElement('div')
+            oDot.className = 'dot'
+
+            oDot.style.left = startX + (n * Math.PI / 180) * step + 'px'
+            oDot.style.top = startY - Math.sin(n * Math.PI / 180) * step + 'px'
+
+            document.body.appendChild(oDot)
+
+        }, 1000 / 60)
+
+        /**
+            2π = 360
+            1角度 = 2π / 360
+            1弧度 = 360 / 2π
+        */
+    </script>
+
+</body>
+
+</html>
