@@ -1,7 +1,3 @@
-let oHome = document.getElementById('home')
-let oLayers = oHome.querySelector('.layers')
-let oLayersNav = oHome.querySelector('.layers-nav')
-
 /** 和getElementById一样只能获取已经存在的Html标签
  *  通过js后续添加的不能获取，getElementsByTagName是动态的
  * let aLayersNav = oLayersNav.querySelectorAll('li')

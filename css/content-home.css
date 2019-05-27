@@ -6,6 +6,8 @@
     perspective: 800px;
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 800px;
+    transition: 1s;
+    -webkit-transition: 1s;
 }
 
 #home .layers li {
@@ -178,6 +180,8 @@
     bottom: 4px;
     z-index: 5;
     text-align: center;
+    transition: 1s;
+    -webkit-transition: 1s;
 }
 
 #home .layers-nav li {

@@ -8,9 +8,17 @@ let contentBox = getById('content-box')
 let boxList = contentBox.querySelectorAll('.box-list')
 let listContent = contentBox.querySelectorAll('.list-content')
 
+
+//home部分
+let oHome = document.getElementById('home')
+let oLayers = oHome.querySelector('.layers')
+let oLayersNav = oHome.querySelector('.layers-nav')
+
+
+//work部分DOM
 let worksContent = document.getElementById('works-content')
 
-
+//导航点部分
 let contentNav = getById('content-nav')
 let aNavs = contentNav.getElementsByTagName('li')
 
