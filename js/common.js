@@ -146,21 +146,34 @@ function mouseWheel() {
 }
 //出场入场动画数组集合
 const entryExitAnimation = [{
-    homeIn: function() { //入场运动到标准位置透明度为1
-        setStyle(oLayers, 'transform', 'translateY(0)')
-        setStyle(oLayersNav, 'transform', 'translateY(0)')
-        oLayers.style.opacity = 1
-        oLayersNav.style.opacity = 1
+        homeIn: function() { //入场->运动到标准位置透明度为1
+            setStyle(oLayers, 'transform', 'translateY(0)')
+            setStyle(oLayersNav, 'transform', 'translateY(0)')
+            oLayers.style.opacity = 1
+            oLayersNav.style.opacity = 1
+        },
+        homeOut: function() { //出场->分别反向运动透明度为0
+            setStyle(oLayers, 'transform', 'translateY(-150px)')
+            setStyle(oLayersNav, 'transform', 'translateY(100px)')
+            oLayers.style.opacity = 0
+            oLayersNav.style.opacity = 0
+        }
     },
-    homeOut: function() { //出场分别反向运动透明度为0
-        setStyle(oLayers, 'transform', 'translateY(-150px)')
-        setStyle(oLayersNav, 'transform', 'translateY(100px)')
-        oLayers.style.opacity = 0
-        oLayersNav.style.opacity = 0
+    {
+        courseIn: function() {
+            setStyle(coursePlane1, 'transform', 'translate(0, 0)')
+            setStyle(coursePlane2, 'transform', 'translate(0, 0)')
+            setStyle(coursePlane3, 'transform', 'translate(0, 0)')
+        },
+        courseOut: function() {
+            setStyle(coursePlane1, 'transform', 'translate(-200px, -200px)')
+            setStyle(coursePlane2, 'transform', 'translate(-200px, 200px)')
+            setStyle(coursePlane3, 'transform', 'translate(200px, -200px)')
+        }
     }
-}]
+]
 
-entryExitAnimation[0].homeOut()
+entryExitAnimation[1].courseOut()
 setTimeout(function() {
-    entryExitAnimation[0].homeIn()
+    entryExitAnimation[1].courseIn()
 }, 1500)

@@ -1,15 +1,20 @@
 #course .course-title-box {
     padding: 50px;
+    position: relative;
+    z-index: 3;
 }
 
 #course .course-intro-box {
     width: 400px;
     padding-left: 58px;
+    position: relative;
+    z-index: 3;
 }
 
 #course .course-rotate-img {
     width: 480px;
     position: absolute;
+    z-index: 3;
     right: 50px;
     top: 70px;
 }
@@ -86,3 +91,36 @@
 * 1.让一个背景图居中，旋转图片的高度和父级要保持同样的奇偶型，否则会产生抖动问题
 * 2.transform 及backface-visibility和transform-style和perspective都需要-webkit-浏览器兼容
 * */
+
+#course .course-plane1 {
+    width: 359px;
+    height: 283px;
+    background: url(../img/plane1.png) no-repeat;
+    position: absolute;
+    left: 300px;
+    top: -100px;
+    z-index: 1;
+    transition: 1s;
+}
+
+#course .course-plane2 {
+    width: 309px;
+    height: 249px;
+    background: url(../img/plane2.png) no-repeat;
+    position: absolute;
+    left: -100px;
+    top: 200px;
+    z-index: 1;
+    transition: 1s;
+}
+
+#course .course-plane3 {
+    width: 230px;
+    height: 182px;
+    background: url(../img/plane3.png) no-repeat;
+    position: absolute;
+    left: 300px;
+    top: 400px;
+    z-index: 1;
+    transition: 1s;
+}
