@@ -170,10 +170,32 @@ const entryExitAnimation = [{
             setStyle(coursePlane2, 'transform', 'translate(-200px, 200px)')
             setStyle(coursePlane3, 'transform', 'translate(200px, -200px)')
         }
+    },
+    {
+        worksIn: function() {
+            setStyle(worksPencil1, 'transform', 'translateY(0)')
+            setStyle(worksPencil3, 'transform', 'translateY(0)')
+            setStyle(worksPencil2, 'transform', 'translateY(0)')
+        },
+        worksOut: function() {
+            setStyle(worksPencil1, 'transform', 'translateY(-100px)')
+            setStyle(worksPencil2, 'transform', 'translateY(100px)')
+            setStyle(worksPencil3, 'transform', 'translateY(100px)')
+        }
+    },
+    {
+        aboutIn: function() {
+            setStyle(spiderImgBox[0], 'transform', 'rotate(0)')
+            setStyle(spiderImgBox[1], 'transform', 'rotate(0)')
+        },
+        aboutOut: function() {
+            setStyle(spiderImgBox[0], 'transform', 'rotate(180deg)')
+            setStyle(spiderImgBox[1], 'transform', 'rotate(-180deg)')
+        }
     }
 ]
 
-entryExitAnimation[1].courseOut()
+entryExitAnimation[3].aboutOut()
 setTimeout(function() {
-    entryExitAnimation[1].courseIn()
+    entryExitAnimation[3].aboutIn()
 }, 1500)

@@ -8,6 +8,8 @@
 
 #works-content .works-imgs {
     padding-left: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 #works-content .works-imgs .imgs-box {
@@ -79,6 +81,7 @@
     position: absolute;
     left: 900px;
     top: 145px;
+    z-index: 2;
     animation: 6s linear infinite robotMove;
     -wekit-animation: 6s linear infinite robotMove;
 }
@@ -109,4 +112,37 @@
     100% {
         -webkit-transform: rotateY(180deg);
     }
+}
+
+#works .works-pencil1 {
+    width: 180px;
+    height: 97px;
+    background: url(../img/pencel1.png) no-repeat;
+    position: absolute;
+    left: 500px;
+    top: 0;
+    z-index: 1;
+    transition: 1s;
+}
+
+#works .works-pencil2 {
+    width: 268px;
+    height: 38px;
+    background: url(../img/pencel2.png) no-repeat;
+    position: absolute;
+    left: 300px;
+    top: 250px;
+    z-index: 1;
+    transition: 1s;
+}
+
+#works .works-pencil3 {
+    width: 441px;
+    height: 231px;
+    background: url(../img/pencel3.png) no-repeat;
+    position: absolute;
+    left: 650px;
+    top: 300px;
+    z-index: 1;
+    transition: 1s;
 }
