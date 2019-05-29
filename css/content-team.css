@@ -2,12 +2,14 @@
     padding: 30px 0 50px 50px;
     width: 400px;
     float: left;
+    transition: 1s;
 }
 
 #team .team-intro-box {
     float: right;
     width: 400px;
     padding-top: 30px;
+    transition: 1s;
 }
 
 #team .team-img {

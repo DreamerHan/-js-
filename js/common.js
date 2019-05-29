@@ -44,6 +44,15 @@ function initNav(now) { //导航初始化
         aNavs[i].className = ''
     }
     aNavs[now].className = 'active'
+
+    //进入每一屏开启对用的动画
+    if (entryExitAnimation[now].animationIn) {
+        entryExitAnimation[now].animationIn()
+    }
+    //上一屏的动画退出
+    if (entryExitAnimation[lastNowNav].animationOut) {
+        entryExitAnimation[lastNowNav].animationOut()
+    }
 }
 
 function clickTab() { //点击切换
@@ -52,8 +61,10 @@ function clickTab() { //点击切换
 
         navList[i].onclick = function() {
             this.index = this.index !== undefined ? this.index : 0
-            initNav(this.index)
+
+            lastNowNav = nowNav
             nowNav = this.index
+            initNav(this.index)
         }
     }
 }
@@ -120,6 +131,8 @@ function mouseWheel() {
         } else {
             bBtn = ev.wheelDelta < 0 ? true : false
         }
+        //在滚动前记录上一次的导航值
+        lastNowNav = nowNav;
 
         if (bBtn) { //向下
             nowNav++
@@ -144,58 +157,3 @@ function mouseWheel() {
     }
 
 }
-//出场入场动画数组集合
-const entryExitAnimation = [{
-        homeIn: function() { //入场->运动到标准位置透明度为1
-            setStyle(oLayers, 'transform', 'translateY(0)')
-            setStyle(oLayersNav, 'transform', 'translateY(0)')
-            oLayers.style.opacity = 1
-            oLayersNav.style.opacity = 1
-        },
-        homeOut: function() { //出场->分别反向运动透明度为0
-            setStyle(oLayers, 'transform', 'translateY(-150px)')
-            setStyle(oLayersNav, 'transform', 'translateY(100px)')
-            oLayers.style.opacity = 0
-            oLayersNav.style.opacity = 0
-        }
-    },
-    {
-        courseIn: function() {
-            setStyle(coursePlane1, 'transform', 'translate(0, 0)')
-            setStyle(coursePlane2, 'transform', 'translate(0, 0)')
-            setStyle(coursePlane3, 'transform', 'translate(0, 0)')
-        },
-        courseOut: function() {
-            setStyle(coursePlane1, 'transform', 'translate(-200px, -200px)')
-            setStyle(coursePlane2, 'transform', 'translate(-200px, 200px)')
-            setStyle(coursePlane3, 'transform', 'translate(200px, -200px)')
-        }
-    },
-    {
-        worksIn: function() {
-            setStyle(worksPencil1, 'transform', 'translateY(0)')
-            setStyle(worksPencil3, 'transform', 'translateY(0)')
-            setStyle(worksPencil2, 'transform', 'translateY(0)')
-        },
-        worksOut: function() {
-            setStyle(worksPencil1, 'transform', 'translateY(-100px)')
-            setStyle(worksPencil2, 'transform', 'translateY(100px)')
-            setStyle(worksPencil3, 'transform', 'translateY(100px)')
-        }
-    },
-    {
-        aboutIn: function() {
-            setStyle(spiderImgBox[0], 'transform', 'rotate(0)')
-            setStyle(spiderImgBox[1], 'transform', 'rotate(0)')
-        },
-        aboutOut: function() {
-            setStyle(spiderImgBox[0], 'transform', 'rotate(180deg)')
-            setStyle(spiderImgBox[1], 'transform', 'rotate(-180deg)')
-        }
-    }
-]
-
-entryExitAnimation[3].aboutOut()
-setTimeout(function() {
-    entryExitAnimation[3].aboutIn()
-}, 1500)

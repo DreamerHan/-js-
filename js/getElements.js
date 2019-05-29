@@ -32,10 +32,16 @@ let oAbout = getById('about')
 let spiderManImgs = oAbout.querySelector('.spider-man-imgs')
 let spiderImgBox = spiderManImgs.querySelectorAll('.img-box')
 
+//team部分DOM
+let oTeam = getById('team')
+let teamTitleBox = oTeam.querySelector('.team-title-box')
+let teamIntroBox = oTeam.querySelector('.team-intro-box')
+
 //导航点部分
 let contentNav = getById('content-nav')
 let aNavs = contentNav.getElementsByTagName('li')
 
 let contentHeight = 0 //内容部分的初始高度
-let nowNav = 3 //当前所在导航的初始值 最大4
+let nowNav = 0 //当前所在导航的初始值 最大4
+let lastNowNav = 0 //用来记录上一次导航值
 let conNavNum = 5 //点导航的数量和内容最大值一样

@@ -1,7 +1,6 @@
 teamContent()
 
 function teamContent() {
-    let oTeam = getById('team')
     let teamImg = oTeam.querySelector('.team-img')
     let aTeamLi = teamImg.getElementsByTagName('li')
     let oC = null
