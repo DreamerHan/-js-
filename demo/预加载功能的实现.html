@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //图片的预加载
+        1. 先new 一个image的对象， 然后把要预加载的图片链接给这个image对象
+        let img = new Image()
+        img.src = '图片路径'
+
+        2. 图片对象加载结束时会有一个onload事件触发
+        img.onload = function() {}
+
+
+        //js和css同样可以进行预加载功能
+        1. 同样需要一个object对象， 但是预加载css和js是创建的一个对象
+        let obj = document.createElement('object')
+
+        2. 将预加载的文件给创建的对象的src属性
+        obj.src = '文件.js/文件.css'
+
+        3. 将对象obj添加到body中
+        document.body.appendChild(obj)
+
+        4. 为了隐藏obj元素的存在进行隐藏设置
+        obj.width = 0
+        obj.height = 0
+
+        5. 文件加载结束会有onload回掉函数出发
+        obj.onload = function() {
+
+        }
+    </script>
+</body>
+
+</html>

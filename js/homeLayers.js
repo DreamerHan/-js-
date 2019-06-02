@@ -67,7 +67,7 @@ function layersChange() {
 }
 
 //自动播放 默认只是一开始播放
-layersTimer = setInterval(autoPlayLayers, 2000);
+layersTimer = setInterval(autoPlayLayers, 3500);
 
 oLayersNav.onmouseover = function() {
     clearInterval(layersTimer)

@@ -45,10 +45,11 @@ function initNav(now) { //导航初始化
     }
     aNavs[now].className = 'active'
 
-    //进入每一屏开启对用的动画
+    //进入每一屏开启对应的动画
     if (entryExitAnimation[now].animationIn) {
         entryExitAnimation[now].animationIn()
     }
+
     //上一屏的动画退出
     if (entryExitAnimation[lastNowNav].animationOut) {
         entryExitAnimation[lastNowNav].animationOut()
@@ -131,6 +132,12 @@ function mouseWheel() {
         } else {
             bBtn = ev.wheelDelta < 0 ? true : false
         }
+
+        //解决在第一个继续向上滑动和在最后一个继续向下滑动的出场问题
+        if ((nowNav === 0 && !bBtn) || (nowNav === navList.length - 1 && bBtn)) {
+            return
+        }
+
         //在滚动前记录上一次的导航值
         lastNowNav = nowNav;
 

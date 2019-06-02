@@ -7,7 +7,10 @@ let oContent = getById('content')
 let contentBox = getById('content-box')
 let boxList = contentBox.querySelectorAll('.box-list')
 let listContent = contentBox.querySelectorAll('.list-content')
-
+    //音乐部分
+let main = getById('main')
+let music = getById('music')
+let audio = getById('page-audio')
 
 //home部分
 let oHome = getById('home')
