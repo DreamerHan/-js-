@@ -30,6 +30,8 @@ function loadingFn() {
     function loadingEnd() { //图片预加载结束事件
         if (loadingBar.style.width === '100%') {
             loadingBar.style.display = 'none'
+            loadingCell[0].style.transition = '1s'
+            loadingCell[1].style.transition = '1s'
             loadingCell[0].style.height = 0
             loadingCell[0].style.opacity = 0
             loadingCell[1].style.height = 0
